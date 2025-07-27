@@ -1,10 +1,23 @@
-// script.js
-fetch('questions.json')
-  .then(response => response.json())
-  .then(data => {
-    showQuestion(data.questions[0]); // untuk sementara tampilkan soal pertama
-  });
+// 1. Kirim permintaan ke Replit API
+fetch('https://latsozone-backend.replit.app/generate', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    prompt: "Buatkan 2 soal matematika SMA campuran pilihan ganda dan isian dalam format JSON"
+  })
+})
+.then(res => res.json())
+.then(data => {
+  const jsonSoal = JSON.parse(data.result); // parsing hasil dari ChatGPT
+  console.log("Hasil dari AI:", jsonSoal);
 
+  // Menampilkan soal pertama
+  showQuestion(jsonSoal.questions[0]); 
+});
+
+// 2. Fungsi tampil soal
 function showQuestion(questionData) {
   const main = document.querySelector('main');
   main.innerHTML = `
@@ -45,5 +58,5 @@ function checkAnswer(el, selected, correct) {
 }
 
 function nextQuestion() {
-  alert("Soal selanjutnya dalam pengembangan yaa, sabar ya sayang 😘");
+  alert("Soal berikutnya dalam pengembangan yaa, sabar ya sayang 😘");
 }
