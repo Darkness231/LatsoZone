@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LatsoZone</title>
+  <style>
+    body {
+      background-color: #f0fdf4;
+      font-family: Arial, sans-serif;
+      color: #1b4332;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      background-color: #2d6a4f;
+      color: #fff;
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      max-width: 600px;
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #d8f3dc;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .question {
+      margin-bottom: 1rem;
+    }
+    button {
+      background-color: #40916c;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-top: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1b4332;
+    }
+    .answer {
+      display: block;
+      margin: 0.5rem 0;
+      padding: 8px;
+      background-color: #fff;
+      border: 2px solid #74c69d;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .answer.correct {
+      background-color: #b7e4c7;
+    }
+    .answer.wrong {
+      background-color: #ffc9c9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LatsoZone</h1>
+    <p>Selamat datang di Latihan Soal Interaktif!</p>
+  </header>
+  <main>
+    <div class="question">
+      <p><strong>1. Manakah bilangan prima berikut ini?</strong></p>
+      <div class="answer" onclick="checkAnswer(this, true)">7</div>
+      <div class="answer" onclick="checkAnswer(this, false)">8</div>
+      <div class="answer" onclick="checkAnswer(this, false)">9</div>
+      <div class="answer" onclick="checkAnswer(this, false)">10</div>
+    </div>
+    <button onclick="nextQuestion()">Soal Selanjutnya</button>
+  </main>  <script>
+    function checkAnswer(el, isCorrect) {
+      const answers = el.parentNode.querySelectorAll('.answer');
+      answers.forEach(a => a.onclick = null);
+      if (isCorrect) {
+        el.classList.add('correct');
+        alert('Jawaban kamu benar!');
+      } else {
+        el.classList.add('wrong');
+        alert('Jawaban kamu salah!');
+      }
+    }
+
+    function nextQuestion() {
+      alert("Soal berikutnya sedang dikembangkan ya sayang. Untuk sekarang baru satu dulu ya 💚");
+    }
+  </script></body>
+</html>
