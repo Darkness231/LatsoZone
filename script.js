@@ -1,5 +1,5 @@
 // 1. Kirim permintaan ke Replit API
-fetch('https://latsozone-backend.replit.app/generate', {
+fetch('https://79bb9af1-11df-42a6-8be2-c91fa6e48bfd-00-3jt8gyhqqrn8r.pike.replit.dev/', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
