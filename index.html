@@ -75,21 +75,7 @@
       <div class="answer" onclick="checkAnswer(this, false)">10</div>
     </div>
     <button onclick="nextQuestion()">Soal Selanjutnya</button>
-  </main>  <script>
-    function checkAnswer(el, isCorrect) {
-      const answers = el.parentNode.querySelectorAll('.answer');
-      answers.forEach(a => a.onclick = null);
-      if (isCorrect) {
-        el.classList.add('correct');
-        alert('Jawaban kamu benar!');
-      } else {
-        el.classList.add('wrong');
-        alert('Jawaban kamu salah!');
-      }
-    }
-
-    function nextQuestion() {
-      alert("Soal berikutnya sedang dikembangkan ya sayang. Untuk sekarang baru satu dulu ya 💚");
-    }
-  </script></body>
+  </main>  
+<script src="script.js"></script>
+</body>
 </html>
