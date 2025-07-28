@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LatsoZone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>LatsoZone - Latihan Soal Interaktif</h1>
+    <div class="form-section">
+      <label for="topic">Pilih Topik:</label>
+      <select id="topic">
+        <option value="logika">Logika Dasar</option>
+      </select>
+
+      <label for="jumlah">Jumlah Soal:</label>
+      <input type="number" id="jumlah" value="3" min="1" max="10">
+
+      <button onclick="generateSoal()">Latso Sekarang</button>
+    </div>
+
+    <div id="soal-container"></div>
+    <button onclick="kirimJawaban()">Kirim Jawaban</button>
+    <div id="hasil"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
