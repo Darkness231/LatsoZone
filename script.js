@@ -1,5 +1,5 @@
 
-const backendURL = "https://79bb9af1-11df-42a6-8be2-c91fa6e48bfd-00-3jt8gyhqqrn8r.pike.replit.dev";
+const backendURL = "https://79bb9af1-11df-42a6-8be2-c91fa6e48bfd-00-3jt8gyhqqrn8r.pike.replit.dev/";
 
 async function generateSoal() {
   const topic = document.getElementById("topic").value;
